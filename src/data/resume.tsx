@@ -259,7 +259,9 @@ export const DATA = {
         "Pentesting",
         "Network Security"
       ],
+      links: [
 
+      ],
       image: "",
       video: ""
     },
@@ -277,7 +279,9 @@ export const DATA = {
         "Networking",
         "Security"
       ],
+      links: [
 
+      ],
       image: "",
       video: ""
     }
