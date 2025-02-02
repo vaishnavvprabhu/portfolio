@@ -58,7 +58,7 @@ export const ResumeCard = ({
         <div className="flex-grow ml-4 items-center flex-col group">
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
+              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm gap-x-2">
                 {title}
                 {badges && (
                   <span className="inline-flex gap-x-1">
@@ -91,16 +91,19 @@ export const ResumeCard = ({
               initial={{ opacity: 0, height: 0 }}
               animate={{
                 opacity: isExpanded ? 1 : 0,
-
                 height: isExpanded ? "auto" : 0,
               }}
               transition={{
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-xs sm:text-sm"
+              className="mt-2 text-xs sm:text-sm space-y-1"
             >
-              {description}
+              {description.split('\n').map((bullet, index) => (
+                <div key={index} className="flex">
+                  <span className="whitespace-pre-wrap">{bullet}</span>
+                </div>
+              ))}
             </motion.div>
           )}
         </div>
